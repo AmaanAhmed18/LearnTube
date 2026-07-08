@@ -223,8 +223,8 @@
 // export default App;
 
 import { useState, useRef } from "react";
-import { fetchStructuredContent } from "./api/learnApi";
-// import mockData from "./data/mockData";
+// import { fetchStructuredContent } from "./api/learnApi";
+import mockData from "./data/mockData";
 import { downloadLearningKit } from "./utils/downloadPdf";
 
 import SummaryCard from "./components/SummaryCard";
@@ -261,12 +261,12 @@ function App() {
     }, 150);
 
     try {
-      const data = await fetchStructuredContent(url.trim());
-      setLearningData(data);
+      // const data = await fetchStructuredContent(url.trim());
+      // setLearningData(data);
 
-      // await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 500));
 
-      // setLearningData(mockData);
+      setLearningData(mockData);
     } catch (err) {
       setError(err.message);
     } finally {
